@@ -92,6 +92,7 @@ else_stmt :
 
 assignment : varref T_ASSIGN l_expr ;
 
+// question 2 (4 lines below)
 a_expr : a_expr T_ADD a_term 
     | a_expr T_SUB a_term
     | a_term
@@ -120,7 +121,8 @@ l_expr : l_expr T_AND l_term
 l_term : l_term T_OR l_fact
   | l_fact
   ;
-
+  
+// question 3 (4 lines below)
 l_fact : 
   | 
   | 
@@ -135,15 +137,17 @@ oprel : T_LT
   | T_NEQ
   ;
 
-
+//qustion 1 (one line)
 read : T_READ varlist ;
 
 write: T_WRITE expr_list;
 
+//question 1 (3 lines below)
 varlist : 
       | 
       ;
-
+      
+//question 2 (3 lines below)
 expr_list : 
   | 
   ;
