@@ -144,8 +144,8 @@ read : T_READ varlist ;
 write: T_WRITE expr_list;
 
 //question 1 (3 lines below) varref
-varlist : T_READ varref
-      | $$ = $1  //?
+varlist : varlist ',' varref
+      | varref
       ;
       
 //question 2 (3 lines below)
