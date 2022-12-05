@@ -111,8 +111,8 @@ a_fact :
     ;
 
 //question 4
-varref : varref T_ID l_expr
-  | [] // ??
+varref : T_ID 
+  | varref '[' a_expr ']'
   ;
 
 l_expr : l_expr T_AND l_term
@@ -123,10 +123,10 @@ l_term : l_term T_OR l_fact
   | l_fact
   ;
   
-// question 3 (4 lines below) use oprel ???
-l_fact : l_fact AND l_expr
-  | l_fact oprel l_expr
-  | (l_expr)
+// question 3 (4 lines below) use oprel
+l_fact : l_fact oprel l_expr
+  | a_expr
+  | '(' l_expr ')'
   ;
 
 
@@ -149,8 +149,8 @@ varlist : T_READ varref
       ;
       
 //question 2 (3 lines below)
-expr_list : 
-  | n -> value = $1    //?
+expr_list : expr_list ',' a_expr
+  | a_expr
   ;
 
 %%
