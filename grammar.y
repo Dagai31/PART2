@@ -122,10 +122,10 @@ l_term : l_term T_OR l_fact
   | l_fact
   ;
   
-// question 3 (4 lines below)
-l_fact : 
-  | 
-  | 
+// question 3 (4 lines below) use oprel ???
+l_fact : l_fact AND l_expr
+  | l_fact oprel l_expr
+  | (l_expr)
   ;
 
 
@@ -142,7 +142,7 @@ read : T_READ varlist ;
 
 write: T_WRITE expr_list;
 
-//question 1 (3 lines below)
+//question 1 (3 lines below) varref
 varlist : 
       | 
       ;
