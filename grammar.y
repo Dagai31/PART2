@@ -110,8 +110,9 @@ a_fact :
     | 
     ;
 
-varref : 
-  | 
+//question 4
+varref : varref T_ID l_expr
+  | [] // ??
   ;
 
 l_expr : l_expr T_AND l_term
