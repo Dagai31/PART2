@@ -103,11 +103,12 @@ a_term : a_term T_MUL a_fact
     | a_fact
     ;
 
-a_fact : 
-    | 
-    | 
-    | 
-    | 
+// question 5
+a_fact : varref 
+    | T_NUM
+    | T_LITERAL_STR
+    | T_SUB a_fact
+    | a_fact
     ;
 
 //question 4
