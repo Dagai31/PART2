@@ -143,13 +143,13 @@ read : T_READ varlist ;
 write: T_WRITE expr_list;
 
 //question 1 (3 lines below) varref
-varlist : 
-      | 
+varlist : T_READ
+      | n -> value =$1
       ;
       
 //question 2 (3 lines below)
 expr_list : 
-  | 
+  | n -> value = $1
   ;
 
 %%
