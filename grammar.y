@@ -143,7 +143,7 @@ read : T_READ varlist ;
 write: T_WRITE expr_list;
 
 //question 1 (3 lines below) varref
-varlist : T_READ
+varlist : T_READ varref
       | $$ = $1  //?
       ;
       
